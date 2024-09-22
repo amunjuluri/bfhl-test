@@ -9,7 +9,7 @@ const BFHLComponent = () => {
   const handleSubmit = async () => {
     try {
       const parsedInput = JSON.parse(input);
-      const res = await fetch('http://localhost:3000/bfhl', {
+      const res = await fetch('https://bfhl-test.onrender.com/bfhl', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -90,6 +90,15 @@ const BFHLComponent = () => {
           {renderFilteredResponse()}
         </div>
       )}
+      <div>
+        <p>Example Input:</p>
+        <p>{'{'}</p>
+        <p>
+  "data": ["a", "b", "c", "1", "2", "3", "z", "y", "X", "Z", "9", "5"],<br/>
+  "file_b64": "SSBsb3ZlIEJhamFqIEZpbmFuY2Uh"<br/>
+</p>
+<p>{'}'}</p>
+      </div>
     </div>
   );
 };
